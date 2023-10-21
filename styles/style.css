@@ -40,6 +40,7 @@ ol {
   list-style: none;
 }
 
+/* Скрыть элемент */
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -67,8 +68,8 @@ ol {
   inline-size: 711px;
   block-size: 456px;
   display: flex;
-  /* justify-content: center; */
-  /* align-items: end; */
+  /* justify-content: center;
+  align-items: end; */
   flex-direction: column;
   gap: 16px;
   margin-block-start: 78px;
@@ -83,6 +84,8 @@ ol {
 
 /* Само видео */
 .result__video {
+  object-fit: cover;
+  object-position: center;
   /* inline-size: 711px;
   block-size: 386px; */
   inline-size: 100%;
@@ -111,6 +114,7 @@ ol {
   border: none;
 }
 
+/* Отступ у первого элемента */
 .search-form__fieldset:first-child {
   margin-inline-end: 10px;
 }
@@ -127,7 +131,6 @@ ol {
 
 /* Лэйбл с полем ввода */
 .search-form__label {
-  inline-size: 100%;
   display: inline-flex;
   inline-size: fit-content;
   block-size: fit-content;
@@ -137,6 +140,7 @@ ol {
   /* block-size: 49px; */
 }
 
+/* Фокус визибл для лейбла ввода поля текста */
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
@@ -151,7 +155,7 @@ ol {
   border: none;
   border-block-start: 1px solid #fff;
   border-block-end: 1px solid #fff;
-  color: rgba(255, 255, 255, 0.70);
+  color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -159,12 +163,19 @@ ol {
   line-height: normal;
 }
 
-.search-form__textfield:focus {
-  outline: none;
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.70);
 }
 
+/* Сброс фокуса */
+.search-form__textfield:focus {
+  outline: none;
+  border: none;
+}
+
+/*  */
 .search-form__textfield:active {
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
 }
 
 /* Общий контейнер чекбоксов */
@@ -363,6 +374,8 @@ input[type='checkbox']:checked + span {
 
 /* Изображение карточки */
 .content__video-card-thumbnail {
+  object-fit: cover;
+  object-position: center;
   inline-size: 194px;
   block-size: 103px;
 }
