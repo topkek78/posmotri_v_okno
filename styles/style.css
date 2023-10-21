@@ -16,6 +16,7 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  /* background-color:antiquewhite; */
 }
 
 h1,
@@ -35,4 +36,336 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+/* Страница целиком */
+.content {
+  inline-size: 100%;
+  display: inline-flex;
+  padding: 133px 30px;
+  justify-content: center;
+  align-items: end;
+  gap: 30px;
+}
+
+/* --------------- Левая часть страницы --------------- */
+.result {
+  box-sizing: border-box;
+  inline-size: 711px;
+  block-size: 456px;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: end; */
+  flex-direction: column;
+  gap: 16px;
+  margin-block-start: 78px;
+}
+
+/* Контейнер для видео */
+.result__video-container {
+  position: relative;
+  inline-size: 711px;
+  block-size: 386px;
+}
+
+/* Само видео */
+.result__video {
+  /* inline-size: 711px;
+  block-size: 386px; */
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* Форма */
+.search-form {
+  display: flex;
+  flex-direction: row;
+  inline-size: 100%;
+  justify-content: space-between;
+}
+
+/* Раздел "Город" и "Время суток" */
+.search-form__fieldset {
+  inline-size: 225px;
+  block-size: 54px;
+  /* inline-size: 212px;
+  block-size: 49px;
+  inline-size: fit-content; */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  border: none;
+}
+
+.search-form__fieldset:first-child {
+  margin-inline-end: 10px;
+}
+
+/* Заголовок "Город" и "Время суток" */
+.search-form__fieldset-title {
+  color: #FFF;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Лэйбл с полем ввода */
+.search-form__label {
+  inline-size: 100%;
+  display: inline-flex;
+  inline-size: fit-content;
+  block-size: fit-content;
+  gap: 5px;
+  /* block-size: 22px; */
+  /* inline-size: 212px; */
+  /* block-size: 49px; */
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Поле ввода города */
+.search-form__textfield {
+  box-sizing: border-box;
+  min-inline-size: 225px;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-block-start: 1px solid #fff;
+  border-block-end: 1px solid #fff;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:active {
+  border: 1px solid #fff;
+}
+
+/* Общий контейнер чекбоксов */
+.search-form__checkbox-list {
+  display: inline-flex;
+  gap: 15px;
+}
+
+/* Новый чекбокс */
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: auto;
+  inline-size: 20px;
+  block-size:20px;
+  vertical-align: middle;
+  outline: 1px solid #fff;
+  outline-offset: -1px;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox:active {
+  background-color: #FFF;
+  outline: 1px solid #1b1919;
+  outline-offset: -2px;
+}
+
+/* Активный чекбокс */
+input[type='checkbox']:checked + span {
+  background-color: #FFF;
+  outline: 1px solid #1b1919;
+  outline-offset: -2px;
+}
+
+/* Появление подчеркинвания при наведении на чекбоксы */
+.search-form__label:hover .search-form__label-text{
+  text-decoration: underline;
+}
+
+/* Общие описания кнопок */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #FFF;
+  border: 1px solid #fff;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Кнопка "Найти" */
+.search-form__submit-button {
+  margin-block-start: 20px;
+  inline-size: 194px;
+  block-size: 34px;
+}
+
+/* Когда кнопка зажата */
+.button:active {
+  background: #545050;
+}
+
+/* Когда на кнопку наводят курсором */
+.button:hover {
+  text-decoration: underline;
+}
+
+
+
+/* --------------- Правая часть страницы ---------------*/
+/* Общая правая часть */
+.content__details {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  inline-size: 399px;
+  block-size: 534px;
+}
+
+/* Заголовок "Посмотри в окно" */
+.title{
+  block-size: 210px;
+  color: inherit;
+  font-family: 'Oswald', sans-serif;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+/* Форматирование для "По-" */
+.content__accent {
+  color: #545050;
+}
+
+/* Карточки */
+.content__list {
+  box-sizing: border-box;
+  position: relative;
+  /* display: flex; */
+  inline-size: 100%;
+  block-size: 298px;
+  overflow: auto;
+  /* gap: 30px; */
+}
+
+.content__list-item {
+  margin-block-end: 30px;
+}
+
+.content__list-item:last-child {
+  margin-block-end: 0px;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Обертка карточки в ссылку */
+.content__card-link {
+  margin: 4px;
+  display: block;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+/* Общая карточка (видео + заголовок и описание) */
+.content__video-card {
+  display: flex;
+  box-sizing: border-box;
+  inline-size: 398px;
+  block-size: 107px;
+  padding: 2px;
+  gap: 1px;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+/* Заголовок и описание карточки */
+.content__video-card-description-container {
+  inline-size: 194px;
+  color: #FFF;
+  font-style: normal;
+  word-wrap: break-word;
+}
+
+/* Заголовок карточки */
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-block-end: 6px;
+}
+
+/* Описание карточки */
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px; /* 90% */
+}
+
+/* Изображение карточки */
+.content__video-card-thumbnail {
+  inline-size: 194px;
+  block-size: 103px;
+}
+
+.more-button {
+  margin: 2px;
+  inline-size: 395px;
+  block-size: 34px;
 }
