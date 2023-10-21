@@ -11,6 +11,8 @@ html {
 .page {
   inline-size: 1200px;
   block-size: 100%;
+  display: flex;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -51,6 +53,7 @@ ol {
 /* Страница целиком */
 .content {
   inline-size: 100%;
+  margin: auto;
   display: inline-flex;
   padding: 133px 30px;
   justify-content: center;
